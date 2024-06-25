@@ -146,6 +146,33 @@ const Edit = () => {
     });
   };
 
+  const handleAddEducations = () => {
+    setData({
+      ...data,
+      resume: {
+        ...data.resume,
+        education: [
+          ...data.resume.educations,
+          {
+            id: uuidv4(),
+            universityName: "University",
+            universityDate: "2020-2023",
+            universityPara: "Did xyz",
+          },
+        ],
+      },
+    });
+  };
+
+  const handleEditEducations = (index, editEducation) => {
+    let copyEducations = data.resume.educations;
+    copyEducations[index] = { ...editEducation };
+    setData({
+      ...data,
+      resume: { ...data.resume, educations: copyEducations },
+    });
+  };
+
   return (
     <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
       <Header isBlog></Header>

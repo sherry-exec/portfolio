@@ -25,7 +25,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
+                className="font-medium text-bold p-2 laptop:p-0 link"
               >
                 {name}.
               </h1>
@@ -174,7 +174,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:shaharyar.ms@outlook.com")}>
               Contact
             </Button>
 

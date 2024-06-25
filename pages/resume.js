@@ -70,15 +70,17 @@ const Resume = () => {
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Education</h1>
-                <div className="mt-2">
-                  <h2 className="text-lg">{resume.education.universityName}</h2>
-                  <h3 className="text-sm opacity-75">
-                    {resume.education.universityDate}
-                  </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {resume.education.universityPara}
-                  </p>
-                </div>
+                {resume.educations.map((education) => (
+                  <div key={education.universityName} className="mt-3">
+                    <h2 className="text-lg">{education.universityName}</h2>
+                    <h3 className="text-sm opacity-75">
+                      {education.universityDate}
+                    </h3>
+                    <p className="text-sm mt-2 opacity-50">
+                      {education.universityPara}
+                    </p>
+                  </div>
+                ))}
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Skills</h1>
@@ -122,6 +124,23 @@ const Resume = () => {
                     </div>
                   )}
                 </div>
+              </div>
+
+              <div className="mt-5">
+                <h1 className="text-2xl font-bold">Certifications</h1>
+                {resume.certifications.map((certification) => (
+                  <div key={certification.certificationName} className="mt-3">
+                    <p className="text-sm mt-1 opacity-50">
+                      {certification.certificationAuthority}
+                    </p>
+                    <h2 className="text-lg">
+                      {certification.certificationName}
+                    </h2>
+                    <h3 className="text-sm opacity-75">
+                      {certification.certificationDate}
+                    </h3>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
